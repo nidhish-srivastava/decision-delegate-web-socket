@@ -384,6 +384,7 @@ function broadcastToRoom(room, message) {
 
 // Broadcast room list to all connected users
 function broadcastRoomList() {
+    console.log('Broadcasting room list');
     const roomList = [];
     
     rooms.forEach((room, roomId) => {
@@ -410,7 +411,7 @@ function broadcastRoomList() {
 // Helper to send JSON data to client
 function sendToClient(ws, data) {
     if (ws.readyState === WebSocket.OPEN) {
-      console.log(data);
+    //   console.log(data);
       ws.send(JSON.stringify(data));
     }
   }
