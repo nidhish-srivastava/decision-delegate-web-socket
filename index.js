@@ -375,7 +375,7 @@ function broadcastRoomDecisions(room) {
 // Broadcast to all users in a room
 function broadcastToRoom(room, message) {
     room.participants.forEach((ws) => {
-      if (ws.readyState === WebSocketServer.OK) {
+      if (ws.readyState === WebSocket.OK) {
         sendToClient(ws, message);
       }
     });
